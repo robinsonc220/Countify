@@ -1,65 +1,71 @@
-# Countify
+# Countify (#2 Word Count Challenge)
 
 A word count with a twist!
 
 ## Description
 
-Countify is a word counting solution built on React.js. Not only does it count words but it also counts characters, sentences, paragraphs and bigrams (work in progress).
+Countify is a word counting solution built on React.js. Not only does it count words but it also counts characters, sentences, paragraphs and bigrams (work in progress). Upcoming features include:
+
+* Character Limit
+* Word Minimum
+* Sentence Minimum
+* Paragraph Minimum
+* Bigram Search
+
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Semantic UI React
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Go to https://github.com/robinsonc220/Countify
+* Fork and clone repo
+* Open in your IDE
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+* To start, run `npm install && npm start` to get the app up and running.
+* Start typing and watch the stats at the bottom of the screen change
+
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+Known Bugs:
+
+* Bigrams not functional (ran out of time)
+* Numbers are inaccurate when you copy and paste text 
+* Numbers are inaccurate (by 1 mostly) when you delete characters
 
 ## Authors
 
 Contributor:
 
-ex. Conrad Robinson 
-ex. [@robinsonc220](https://github.com/robinsonc220/)
+Conrad Robinson 
+[@robinsonc220](https://github.com/robinsonc220/)
 
 ## Version History
 
 * 0.2
-    * Various bug fixes and optimizations
+    * Fixed Words bug where it only counted empty space
+    * Fixed Sentence bug where it didn't count sentences that began with a number
+    * Fixed Paragraph bug where it only counted newlines
     * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project not licensed - Nothing to see at the LICENSE.md file
 
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
 * [Spotify - Aesthetic](https://open.spotify.com)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+* [Semantic UI React](https://react.semantic-ui.com/)
+* [Aaron W - Regex Help](https://stackoverflow.com/questions/35215348/count-sentences-in-string-with-javascript)
 
 
 

@@ -11,7 +11,6 @@ class App extends React.Component {
 state = {
 
   typeField: '',
-  // characters: '',
   charLimit: null,
   words: [],
   sentences: 0,
@@ -22,39 +21,29 @@ state = {
   }
 
 
-//  charCount = () => {
-
-//   this.setState({characters: this.state.typeField})
-
-//   }
-
 
 
   wordCount = () => {
 
-    this.setState({words: this.state.typeField.split(' ')})
+    this.setState({words: this.state.typeField.split(/\w[\s|$]/)})
     console.log(this.state.words)
-        // ONLY COUNTS SPACES WITH THIS METHOD. WORKING ON A REGEX SOLUTION BELOW
-
-    // return this.state.typeField.split(/^a-z,0-9,.?!/)
-
 
   }
 
 
   sentCount = () => {
 
-    let sentArr = this.state.typeField.replace(/([.?!])\s*(?=[a-z])/g, "$1|").split("|")
+    let sentArr = this.state.typeField.split(/\w[.?!][\s|$]/)
     this.setState({sentences: sentArr.length})
-
-    // NEED TO FIND A FIX FOR SENTENCES THAT BEGIN WITH A NUMBER
 
   }
 
   parCount = () => {
 
-    let parArr = this.state.typeField.split('\n')
+    let parArr = this.state.typeField.split(/\w[.?!][\n|$]/)
     this.setState({paragraphs: parArr.length})
+
+
   }
 
   setCharLimit = (evt) => {
@@ -64,7 +53,6 @@ state = {
 handleOnChange = (evt) => {
   
   this.setState({typeField: evt.target.value})
-  // this.charCount()
   this.wordCount()
   this.sentCount()
   this.parCount()
@@ -90,24 +78,6 @@ render(){
 
           <Divider hidden />
           <Divider hidden />
-
-          {/* <Button animated>
-            <Button.Content visible>Edit Parameters</Button.Content>
-            <Button.Content hidden>
-              <Icon name='arrow right' />
-            </Button.Content>
-          </Button>
-
-          <Modal size='mini' dimmer={dimmer} open={open} onClose={this.close}>
-                    <Modal.Header>Are You Sure?</Modal.Header>
-                    <Modal.Content>
-                        <p>iunno will choose a random meal for you and charge your card</p>
-                    </Modal.Content>
-                    <Modal.Actions>
-                        <Button compact onClick={this.close} negative>Ahhh No!! </Button>
-                        <Button compact onClick={()=>{this.props.createOrder(); this.props.increment()}} positive >Confirm Order</Button>
-                    </Modal.Actions>
-                </Modal> */}
 
           <EditButton value = {this.state.charLimit} onChange = {this.setCharLimit}/>
 
@@ -160,6 +130,5 @@ render(){
   );
   }
 }
-
 
 export default App;
